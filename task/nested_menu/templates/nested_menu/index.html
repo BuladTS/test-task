@@ -1,0 +1,21 @@
+{% load menu_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        {% include 'nested_menu/includes/menu_req.html' with data=data split_address=split_address %}
+    </ul>
+
+    <p>-</p>
+    <p>-</p>
+    <p>-</p>
+    <p>-</p>
+    {% draw_menu 'movie' %}
+</body>
+</html>

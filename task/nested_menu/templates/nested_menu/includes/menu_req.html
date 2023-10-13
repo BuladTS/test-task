@@ -1,0 +1,16 @@
+{% for key, value in data.items %}
+    {% if key in split_address %}
+        <li>
+            {% if key == split_address|last %}
+                <span>{{ key }}</span>
+            {% else %}
+                <a href="{{ value.value.url }}">{{ key }}</a>
+            {% endif %}
+            <ul>
+                {% include 'nested_menu/includes/menu_req.html' with data=value.children split_address=split_address %}
+            </ul>
+        </li>
+    {% else %}
+        <li><a href="{{ value.url }}">{{ value.title }}</a></li>
+    {% endif %}
+{% endfor %}
